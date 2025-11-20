@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Wisata Lamongan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+    <audio id="background-music" loop autoplay> 
+        <source src="wingko_babat.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <div class="main-background"> 
+
+        <div class="container" id="main-content-container"> 
+            
+            <header>
+                <h1>Ayo Tak Jak Dolan Nang Lamongan! 🗺</h1>
+                <p>Jelajah Wisata Wetan Pesisir, Temokno Peta Liburan Sing Cocok!</p>
+            </header>
+
+            <div id="home-page" class="page">
+                <div class="intro-box">
+                    
+                    <button class="info-button" onclick="showInfoModal()">
+                        <i class="fas fa-info-circle"></i> Info Lamongan
+                    </button>
+                    
+                    <div class="video-background">
+                        <video muted loop autoplay id="cityVideo">
+                            <source src="lamongan_video_HD.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+                    </div>
+                    
+                    <div class="intro-content">
+                        <div class="intro-caption">
+                            <p>Halo, dulur! Bingung milih wisata nang Lamongan? Jawab pertanyaan iki, lan temokno siji rekomendasi wisata sing paling cocok karo budget lan minatmu!</p>
+                        </div>
+                        <button class="primary-button" onclick="startQuiz()">
+                            <i class="fas fa-route"></i> Mulai Petualangan
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="quick-picks">
+                    <h2>Quick Picks (Pilihan Sat-set)</h2>
+                    <p>Langsung pilih destinasi andalan:</p>
+                    <div class="quick-buttons">
+                        <button onclick="showQuickResult('WBL')">
+                            <i class="fas fa-ferry"></i> WBL (Premium)
+                        </button>
+                        <button onclick="showQuickResult('MZGSatuan')">
+                            <i class="fas fa-paw"></i> Maharani Zoo & Goa
+                        </button>
+                        <button onclick="showQuickResult('MakamSunanDrajat')">
+                            <i class="fas fa-mosque"></i> Ziarah Sunan Drajat
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quiz-area" class="page" style="display: none;">
+                </div>
+
+            <div id="result" class="page" style="display: none;">
+                <div id="rekomendasi-list">
+                    </div>
+                
+                <div class="result-actions">
+                    <button class="secondary-button" onclick="resetQuiz()">
+                        <i class="fas fa-undo"></i> Ulangi Pilihan
+                    </button>
+                    <button class="secondary-button" onclick="goToHome()">
+                        <i class="fas fa-home"></i> Kembali ke Awal
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div> <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeInfoModal()">&times;</span>
+            <h3 class="modal-title"><i class="fas fa-city"></i> Kabupaten Lamongan: Kota Bandeng dan Soto</h3>
+            
+            <div class="modal-body">
+                
+                <section>
+                    <h4><i class="fas fa-map-marker-alt"></i> Letak Geografis Lamongan</h4>
+                    <p>Lamongan terletak di pesisir utara Jawa Timur, berbatasan dengan Laut Jawa di utara, Gresik di timur, Mojokerto/Jombang di selatan, dan Tuban/Bojonegoro di barat. Topografinya dibagi menjadi wilayah pantura (dataran rendah dan perbukitan kapur) dan wilayah selatan (dataran aluvial dan kawasan bengawan Solo). Ini membuat Lamongan memiliki keragaman wisata yang kaya, mulai dari pantai hingga waduk dan pegunungan.</p>
+                </section>
+                
+                <hr>
+
+                <section>
+                    <h4><i class="fas fa-history"></i> Sejarah Singkat</h4>
+                    <p>Lamongan resmi berdiri pada tanggal 26 Mei 1569. Nama Lamongan erat kaitannya dengan Mbah Lamong (Ki Demang Laksamono), seorang tokoh dan abdi setia dari Sunan Giri yang ditugaskan untuk menyebarkan Islam dan memimpin wilayah tersebut. Jejak sejarah Islamnya sangat kuat, terutama dengan adanya Makam Sunan Drajat, salah satu Wali Songo yang terkenal.</p>
+                </section>
+
+                <hr>
+                
+                <section>
+                    <h4><i class="fas fa-utensils"></i> Kuliner Khas Lamongan</h4>
+                    <p>Lamongan terkenal dengan dua julukan utama: Soto Lamongan dan Bandeng Presto. Soto Lamongan memiliki ciri khas pada kuah kuning kental dan bubuk koya (kremesan kerupuk udang) yang gurih. Selain itu, ada juga Wingko Babat, camilan manis dari ketan dan kelapa, yang berasal dari wilayah Babat, Lamongan.</p>
+                </section>
+            </div>
+            <button class="close-modal-button secondary-button" onclick="closeInfoModal()">Tutup Informasi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
